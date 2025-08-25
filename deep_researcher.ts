@@ -11,10 +11,9 @@ import { ChatOpenAI, OpenAI, OpenAIEmbeddings } from "@langchain/openai";
 import fs from 'fs';
 import Exa from "exa-js";
 import { RunnableLambda } from "@langchain/core/runnables";
+config()
 
 const exa = new Exa(process.env.EXA_API_KEY);
-
-config()
 
 const llm = new ChatOllama({
     baseUrl: 'http://localhost:11434',
@@ -26,12 +25,12 @@ const llm = new ChatOllama({
 const embeddings = new OpenAIEmbeddings({
     model: 'text-embedding-3-large'
 })
-
-/* const llm = new ChatOpenAI({
+/* 
+const llm = new ChatOpenAI({
     model: 'gpt-4.1-mini',
     temperature: 0
-}) */
-
+})
+ */
 const InputStateAnnotation = Annotation.Root({
     chat_history: Annotation<BaseMessage[]>,
     follow_up: Annotation<string>
@@ -325,7 +324,7 @@ const summarizerNode = async (input: typeof GraphStateAnnotation.State) => {
 
     return new Command({
         update: {
-            current_sub_research_context: [...input.current_sub_research_context, ...newContext],
+            current_sub_research_context: [...input.current_sub_research_context.filter(doc => doc.pageContent), ...newContext],
             current_sub_research_action: '',
             current_sub_research_query: '',
             current_sub_research_urls: [],

@@ -20,64 +20,64 @@ Current date and time: ${new Date(Date.now()).toISOString()}
 `
 
 const researchRouterFewShots: BaseMessageLike[] = [
-    [
-        'user', 
-        `<conversation></conversation>
+  [
+    'user',
+    `<conversation></conversation>
         <follow_up>
         Find best car under $40K for fuel economy - any type even van works
         </follow_up>`
-    ],
-    [
-        'assistant',
-        `<route>research</route>`
-    ],
-    [
-        'user', 
-        `<conversation></conversation>
+  ],
+  [
+    'assistant',
+    `<route>research</route>`
+  ],
+  [
+    'user',
+    `<conversation></conversation>
         <follow_up>
         Compare SaaS CRMs: Salesforce vs HubSpot pricing tiers for teams under 50 users
         </follow_up>`
-    ],
-    [
-        'assistant',
-        `<route>research</route>`
-    ],
-    [
-        'user',
-        `<conversation>
+  ],
+  [
+    'assistant',
+    `<route>research</route>`
+  ],
+  [
+    'user',
+    `<conversation>
         User: I need help with investment
         Assistant: What type and risk tolerance?
         </conversation>
         <follow_up>
         Tech stocks, moderate risk, $50K budget
         </follow_up>`
-    ],
-    [
-        'assistant',
-        `<route>research</route>`
-    ],
-    [
-        'user', 
-        `<conversation></conversation>
+  ],
+  [
+    'assistant',
+    `<route>research</route>`
+  ],
+  [
+    'user',
+    `<conversation></conversation>
         <follow_up>
         Tell me about AI models
         </follow_up>`
-    ],
-    [
-        'assistant',
-        `<route>question</route>`
-    ],
-    [
-        'user', 
-        `<conversation></conversation>
+  ],
+  [
+    'assistant',
+    `<route>question</route>`
+  ],
+  [
+    'user',
+    `<conversation></conversation>
         <follow_up>
         Best phones?
         </follow_up>`
-    ],
-    [
-        'assistant',
-        `<route>question</route>`
-    ]
+  ],
+  [
+    'assistant',
+    `<route>question</route>`
+  ]
 ];
 
 const userQuestionPrompt = `/no_think You are an intelligent question asker and query handler in a deep research pipeline. You'll be provided with a conversation history and a follow-up question from the user.
@@ -100,33 +100,33 @@ Current date and time: ${new Date(Date.now()).toISOString()}
 `;
 
 const userQuestionFewShots: BaseMessageLike[] = [
-    [
-        'user',
-        `<conversation></conversation>
+  [
+    'user',
+    `<conversation></conversation>
         <follow_up>
         I need research on models
         </follow_up>`
-    ],
-    [
-        'assistant',
-        `I'd be happy to help with research on models! Could you clarify what type of models you're interested in? For example:
+  ],
+  [
+    'assistant',
+    `I'd be happy to help with research on models! Could you clarify what type of models you're interested in? For example:
         - AI/ML models (like GPT, neural networks)
         - Business models (like SaaS, marketplace, subscription)
         - Fashion/physical models
         - Mathematical/statistical models
 
         Also, what specific aspect would be most valuable - performance comparisons, implementation strategies, market trends, or something else?`
-    ],
-    [
-        'user',
-        `<conversation></conversation>
+  ],
+  [
+    'user',
+    `<conversation></conversation>
         <follow_up>
         What is machine learning?
         </follow_up>`
-    ],
-    [
-        'assistant',
-        `Machine learning is a subset of artificial intelligence where computers learn to make predictions or decisions by finding patterns in data, rather than being explicitly programmed for each task.
+  ],
+  [
+    'assistant',
+    `Machine learning is a subset of artificial intelligence where computers learn to make predictions or decisions by finding patterns in data, rather than being explicitly programmed for each task.
 
         Key concepts:
         - **Training**: The system learns from historical data (like email examples to detect spam)
@@ -136,57 +136,57 @@ const userQuestionFewShots: BaseMessageLike[] = [
         Think of it like teaching a child to recognize cats - instead of listing every cat feature, you show them many cat photos until they learn the patterns themselves.
 
         Are you interested in learning more about specific applications or getting started with ML for a particular use case?`
-    ],
-    [
-        'user',
-        `<conversation></conversation>
+  ],
+  [
+    'user',
+    `<conversation></conversation>
         <follow_up>
         Research market trends in 2025
         </follow_up>`
-    ],
-    [
-        'assistant',
-        `I'd be happy to help research market trends! To provide the most valuable insights, could you specify:
+  ],
+  [
+    'assistant',
+    `I'd be happy to help research market trends! To provide the most valuable insights, could you specify:
 
         1. **Which market or industry** are you most interested in? (e.g., tech, healthcare, retail, real estate)
         2. **Geographic focus** - global trends, specific countries/regions, or particular markets?
         3. **What type of trends** - consumer behavior, technology adoption, investment patterns, regulatory changes?
 
         This will help me focus the research on what's most relevant for your needs.`
-    ],
-    [
-        'user',
-        `<conversation>
+  ],
+  [
+    'user',
+    `<conversation>
         User: I want to understand customer retention better
         Assistant: What industry and company size are you focusing on?
         </conversation>
         <follow_up>
         SaaS companies with 100-500 employees
         </follow_up>`
-    ],
-    [
-        'assistant',
-        `Great! B2B SaaS in the mid-market segment has some unique retention challenges. To focus the research effectively:
+  ],
+  [
+    'assistant',
+    `Great! B2B SaaS in the mid-market segment has some unique retention challenges. To focus the research effectively:
 
         1. **What specific retention metrics** are you most concerned about - churn rate, expansion revenue, customer lifetime value?
         2. **Any particular challenges** you're facing - onboarding issues, feature adoption, competitive pressure?
         3. **Time frame** for the analysis - recent trends, historical comparisons, or future projections?
 
         This will help me research the most actionable strategies for your segment.`
-    ],
-    [
-        'user',
-        `<conversation>
+  ],
+  [
+    'user',
+    `<conversation>
         User: I'm launching a sustainable fashion brand
         Assistant: What specific market research would be most valuable for your launch strategy?
         </conversation>
         <follow_up>
         Analyze competitive landscape and consumer preferences for sustainable fashion targeting millennials in North America from 2024-2025
         </follow_up>`
-    ],
-    [
-        'assistant',
-        `Perfect! That's a well-defined research scope. I'll analyze:
+  ],
+  [
+    'assistant',
+    `Perfect! That's a well-defined research scope. I'll analyze:
 
         **Competitive Landscape:**
         - Key sustainable fashion brands targeting millennials in North America
@@ -203,7 +203,7 @@ const userQuestionFewShots: BaseMessageLike[] = [
         - Emerging opportunities and potential challenges
 
         Is there anything else you want me to consider or just tell me to begin.`
-    ]
+  ]
 ];
 
 const topicExractorPrompt = `/no_think
@@ -228,56 +228,56 @@ You are a deep research topic extractor in a specialized pipeline. Analyze the c
    /no_think
 `
 const topicExtractorFewShots: BaseMessageLike[] = [
-    [
-        'user',
-        `<conversation>
+  [
+    'user',
+    `<conversation>
         User: Renewable energy storage in EU
         AI: Targeting specific tech like hydrogen or batteries? 
         </conversation>
         <follow_up>
         Lithium-ion batteries, 2020-2025
         </follow_up>`
-    ],
-    [
-        'assistant',
-        `<topic>
+  ],
+  [
+    'assistant',
+    `<topic>
         Comprehensive analysis of lithium-ion battery storage solutions for renewable energy grids in the European Union (2020-2025), including cost trends and regulatory impacts
         </topic>`
-    ],
+  ],
 
-    [
-        'user',
-        `<conversation>
+  [
+    'user',
+    `<conversation>
         User: I need a new family car
         AI: Any price limit or specific features you care about?
         </conversation>
         <follow_up>
         under $35k, top safety, hybrid, fits 3 car seats
         </follow_up>`
-    ],
-    [
-        'assistant',
-        `<topic>
+  ],
+  [
+    'assistant',
+    `<topic>
         Find best family vehicles under $35,000 with top IIHS safety ratings, hybrid powertrains, and third-row or wide second-row seating that easily accommodates three child seats
         </topic>`
-    ],
+  ],
 
-    [
-        'user',
-        `<conversation>
+  [
+    'user',
+    `<conversation>
         User: Weekend sports car for track days
         AI: Budget in mind, and do you want something street-legal?
         </conversation>
         <follow_up>
         track-ready road-legal, under $60k, prefer RWD
         </follow_up>`
-    ],
-    [
-        'assistant',
-        `<topic>
+  ],
+  [
+    'assistant',
+    `<topic>
         Deep research on rear-wheel-drive, street-legal track cars under $60K capable of reliable HPDE use (2025 model years), covering ownership costs and recommended factory Track/Performance packages
         </topic>`
-    ]
+  ]
 ];
 
 const researchSuperviserPrompt = `/no_think You are the master research supervisor orchestrating a comprehensive investigation pipeline. You control the strategic direction of research, determining what needs to be studied and how deeply the investigation has progressed.
@@ -396,55 +396,55 @@ Current state and capabilities of quantum computing technology in 2024
 REMEMBER: Your output must contain EXACTLY these two XML blocks with the exact tag names shown. Any deviation from this format will cause system failure.`;
 
 const researchSuperviserFewShots: BaseMessageLike[] = [
- // Example 1: Empty context - need foundational understanding first
- [
-   'human', 
-   '<main_research_topic>Recent large language model releases and their comparative performance capabilities in 2024-2025</main_research_topic>\n<current_context></current_context>\n<current_confidence>0.0</current_confidence>'
- ],
- [
-   'assistant', 
-   '<research_topic>Major large language model releases and announcements in 2024-2025</research_topic>\n<confidence>0.1</confidence>'
- ],
- 
- // Example 2: Some basic info, now need focused research
- [
-   'human',
-   '<main_research_topic>Electric vehicle market trends and consumer adoption patterns in North America</main_research_topic>\n<current_context>Electric vehicle sales in North America reached 1.4 million units in 2023, representing 7.6% of total vehicle sales. Tesla maintains largest market share at 62%, followed by Ford with 7% and GM with 6%. Average EV price decreased from $66,000 in 2022 to $53,000 in 2023.</current_context>\n<current_confidence>0.3</current_confidence>'
- ],
- [
-   'assistant',
-   '<research_topic>Consumer adoption barriers and demographic patterns for electric vehicles in North America</research_topic>\n<confidence>0.5</confidence>'
- ],
- 
- // Example 3: Substantial context, high confidence warranted
- [
-   'human',
-   '<main_research_topic>Lab-grown meat technology advancement and consumer acceptance barriers in mainstream food markets</main_research_topic>\n<current_context>Cultured meat production uses cellular agriculture, growing animal cells in bioreactors without raising livestock. Current production costs range from $50-290 per pound depending on scale and technology. Singapore was first country to approve cultured meat sales in 2020, followed by US approval for Upside Foods and GOOD Meat in 2023. Consumer surveys show 32% willing to try cultured meat, with main concerns being safety (67%), taste (58%), and price (71%). Technology challenges include scaling production, reducing costs, and creating complex tissue structures. Market projections estimate $290 billion industry by 2035 if cost parity achieved.</current_context>\n<current_confidence>0.6</current_confidence>'
- ],
- [
-   'assistant',
-   '<research_topic>Regulatory approval pathways and timeline for cultured meat commercialization globally</research_topic>\n<confidence>0.8</confidence>'
- ],
+  // Example 1: Empty context - need foundational understanding first
+  [
+    'human',
+    '<main_research_topic>Recent large language model releases and their comparative performance capabilities in 2024-2025</main_research_topic>\n<current_context></current_context>\n<current_confidence>0.0</current_confidence>'
+  ],
+  [
+    'assistant',
+    '<research_topic>Major large language model releases and announcements in 2024-2025</research_topic>\n<confidence>0.1</confidence>'
+  ],
 
- // Example 4: Unknown/emerging topic - need basic understanding
- [
-   'human',
-   '<main_research_topic>GPT-6 model architecture and performance benchmarks compared to current leading models</main_research_topic>\n<current_context></current_context>\n<current_confidence>0.0</current_confidence>'
- ],
- [
-   'assistant',
-   '<research_topic>What is GPT-6 current development status and announced capabilities</research_topic>\n<confidence>0.05</confidence>'
- ],
+  // Example 2: Some basic info, now need focused research
+  [
+    'human',
+    '<main_research_topic>Electric vehicle market trends and consumer adoption patterns in North America</main_research_topic>\n<current_context>Electric vehicle sales in North America reached 1.4 million units in 2023, representing 7.6% of total vehicle sales. Tesla maintains largest market share at 62%, followed by Ford with 7% and GM with 6%. Average EV price decreased from $66,000 in 2022 to $53,000 in 2023.</current_context>\n<current_confidence>0.3</current_confidence>'
+  ],
+  [
+    'assistant',
+    '<research_topic>Consumer adoption barriers and demographic patterns for electric vehicles in North America</research_topic>\n<confidence>0.5</confidence>'
+  ],
 
- // Example 5: Comprehensive research complete
- [
-   'human',
-   '<main_research_topic>Impact of remote work on commercial real estate markets in major US cities</main_research_topic>\n<current_context>Office vacancy rates in major US cities: NYC 22.7%, San Francisco 31.8%, Chicago 19.4%, Austin 24.1% as of Q3 2024. Remote work adoption stabilized at 35% fully remote, 42% hybrid arrangements. Commercial real estate values declined 15-25% in downtown cores, while suburban office parks saw 8% increases. Companies reducing office footprints by average 30-40%. Conversion of office buildings to residential increased 340% since 2020. New leasing patterns favor flexible, shorter-term agreements. Co-working spaces expanded 28% to fill demand for hybrid workers. Property tax revenues in downtown areas declined average 18%, affecting municipal budgets.</current_context>\n<current_confidence>0.75</current_confidence>'
- ],
- [
-   'assistant',
-   '<research_topic>Long-term municipal budget impacts and policy responses to commercial real estate decline</research_topic>\n<confidence>0.85</confidence>'
- ]
+  // Example 3: Substantial context, high confidence warranted
+  [
+    'human',
+    '<main_research_topic>Lab-grown meat technology advancement and consumer acceptance barriers in mainstream food markets</main_research_topic>\n<current_context>Cultured meat production uses cellular agriculture, growing animal cells in bioreactors without raising livestock. Current production costs range from $50-290 per pound depending on scale and technology. Singapore was first country to approve cultured meat sales in 2020, followed by US approval for Upside Foods and GOOD Meat in 2023. Consumer surveys show 32% willing to try cultured meat, with main concerns being safety (67%), taste (58%), and price (71%). Technology challenges include scaling production, reducing costs, and creating complex tissue structures. Market projections estimate $290 billion industry by 2035 if cost parity achieved.</current_context>\n<current_confidence>0.6</current_confidence>'
+  ],
+  [
+    'assistant',
+    '<research_topic>Regulatory approval pathways and timeline for cultured meat commercialization globally</research_topic>\n<confidence>0.8</confidence>'
+  ],
+
+  // Example 4: Unknown/emerging topic - need basic understanding
+  [
+    'human',
+    '<main_research_topic>GPT-6 model architecture and performance benchmarks compared to current leading models</main_research_topic>\n<current_context></current_context>\n<current_confidence>0.0</current_confidence>'
+  ],
+  [
+    'assistant',
+    '<research_topic>What is GPT-6 current development status and announced capabilities</research_topic>\n<confidence>0.05</confidence>'
+  ],
+
+  // Example 5: Comprehensive research complete
+  [
+    'human',
+    '<main_research_topic>Impact of remote work on commercial real estate markets in major US cities</main_research_topic>\n<current_context>Office vacancy rates in major US cities: NYC 22.7%, San Francisco 31.8%, Chicago 19.4%, Austin 24.1% as of Q3 2024. Remote work adoption stabilized at 35% fully remote, 42% hybrid arrangements. Commercial real estate values declined 15-25% in downtown cores, while suburban office parks saw 8% increases. Companies reducing office footprints by average 30-40%. Conversion of office buildings to residential increased 340% since 2020. New leasing patterns favor flexible, shorter-term agreements. Co-working spaces expanded 28% to fill demand for hybrid workers. Property tax revenues in downtown areas declined average 18%, affecting municipal budgets.</current_context>\n<current_confidence>0.75</current_confidence>'
+  ],
+  [
+    'assistant',
+    '<research_topic>Long-term municipal budget impacts and policy responses to commercial real estate decline</research_topic>\n<confidence>0.85</confidence>'
+  ]
 ];
 const topicResearchSuperviserPrompt = `/no_think You are the tactical research supervisor managing individual search operations within the broader research pipeline. Your role is to take a specific research topic and systematically gather the most relevant information through strategic web searches.
 
@@ -577,55 +577,55 @@ REMEMBER: Your output must contain EXACTLY these two XML blocks with the exact t
 Current date and time: ${new Date(Date.now()).toISOString()}`;
 
 const topicResearchSuperviserFewShots: BaseMessageLike[] = [
- // Example 1: Empty context - need broad foundational search
- [
-   'user',
-   '<research_topic>Latest AI model releases and announcements in 2024-2025</research_topic>\n<current_context></current_context>\n<current_confidence>0.0</current_confidence>'
- ],
- [
-   'assistant',
-   '<query>latest AI language models released 2024 2025 GPT Claude Gemini</query>\n\n<confidence>0.15</confidence>'
- ],
+  // Example 1: Empty context - need broad foundational search
+  [
+    'user',
+    '<research_topic>Latest AI model releases and announcements in 2024-2025</research_topic>\n<current_context></current_context>\n<current_confidence>0.0</current_confidence>'
+  ],
+  [
+    'assistant',
+    '<query>latest AI language models released 2024 2025 GPT Claude Gemini</query>\n\n<confidence>0.15</confidence>'
+  ],
 
- // Example 2: First search done, need specific details
- [
-   'user',
-   '<research_topic>Latest AI model releases and announcements in 2024-2025</research_topic>\n<current_context>GPT-4 Turbo released by OpenAI in late 2023, Claude 3 family (Haiku, Sonnet, Opus) released by Anthropic in March 2024. Google released Gemini 1.5 Pro with 1M token context window. Meta released Llama 3 with 8B and 70B parameter versions.</current_context>\n<current_confidence>0.15</current_confidence>'
- ],
- [
-   'assistant',
-   '<query>AI model benchmarks performance comparison 2024 GPT-4 Claude 3 Gemini</query>\n\n<confidence>0.45</confidence>'
- ],
+  // Example 2: First search done, need specific details
+  [
+    'user',
+    '<research_topic>Latest AI model releases and announcements in 2024-2025</research_topic>\n<current_context>GPT-4 Turbo released by OpenAI in late 2023, Claude 3 family (Haiku, Sonnet, Opus) released by Anthropic in March 2024. Google released Gemini 1.5 Pro with 1M token context window. Meta released Llama 3 with 8B and 70B parameter versions.</current_context>\n<current_confidence>0.15</current_confidence>'
+  ],
+  [
+    'assistant',
+    '<query>AI model benchmarks performance comparison 2024 GPT-4 Claude 3 Gemini</query>\n\n<confidence>0.45</confidence>'
+  ],
 
- // Example 3: Second search done, conclude research
- [
-   'user',
-   '<research_topic>Latest AI model releases and announcements in 2024-2025</research_topic>\n<current_context>GPT-4 Turbo released by OpenAI in late 2023, Claude 3 family released by Anthropic in March 2024. Google released Gemini 1.5 Pro with 1M token context window. Meta released Llama 3. Benchmark results show Claude 3 Opus leading in reasoning tasks, GPT-4 strong in code generation, Gemini 1.5 Pro excels in long context tasks. Pricing ranges from $0.50-$60 per million tokens depending on model size and capabilities.</current_context>\n<current_confidence>0.45</current_confidence>'
- ],
- [
-   'assistant',
-   '<query>latest AI model releases 2025 announcements roadmap</query>\n\n<confidence>0.75</confidence>'
- ],
+  // Example 3: Second search done, conclude research
+  [
+    'user',
+    '<research_topic>Latest AI model releases and announcements in 2024-2025</research_topic>\n<current_context>GPT-4 Turbo released by OpenAI in late 2023, Claude 3 family released by Anthropic in March 2024. Google released Gemini 1.5 Pro with 1M token context window. Meta released Llama 3. Benchmark results show Claude 3 Opus leading in reasoning tasks, GPT-4 strong in code generation, Gemini 1.5 Pro excels in long context tasks. Pricing ranges from $0.50-$60 per million tokens depending on model size and capabilities.</current_context>\n<current_confidence>0.45</current_confidence>'
+  ],
+  [
+    'assistant',
+    '<query>latest AI model releases 2025 announcements roadmap</query>\n\n<confidence>0.75</confidence>'
+  ],
 
- // Example 4: Different topic - empty context
- [
-   'user',
-   '<research_topic>Electric vehicle charging infrastructure growth North America 2024</research_topic>\n<current_context></current_context>\n<current_confidence>0.0</current_confidence>'
- ],
- [
-   'assistant',
-   '<query>EV charging stations North America 2024 statistics growth Tesla Supercharger</query>\n\n<confidence>0.2</confidence>'
- ],
+  // Example 4: Different topic - empty context
+  [
+    'user',
+    '<research_topic>Electric vehicle charging infrastructure growth North America 2024</research_topic>\n<current_context></current_context>\n<current_confidence>0.0</current_confidence>'
+  ],
+  [
+    'assistant',
+    '<query>EV charging stations North America 2024 statistics growth Tesla Supercharger</query>\n\n<confidence>0.2</confidence>'
+  ],
 
- // Example 5: Complex topic - concluding after sufficient research
- [
-   'user',
-   '<research_topic>Lab-grown cultured meat regulatory approval timeline global markets</research_topic>\n<current_context>Singapore approved cultured meat sales in 2020. US FDA and USDA approved Upside Foods and GOOD Meat in 2023 for limited restaurant sales. EU reviewing applications under Novel Foods Regulation, no approvals yet. Canada has applications under review. Australia considering regulatory framework. Production costs still high at $50-200 per pound. Consumer acceptance surveys show 35% willing to try, safety concerns remain primary barrier.</current_context>\n<current_confidence>0.6</current_confidence>'
- ],
- [
-   'assistant',
-   '<query>cultured meat market size forecast 2025-2030 commercial scaling timeline</query>\n\n<confidence>0.8</confidence>'
- ]
+  // Example 5: Complex topic - concluding after sufficient research
+  [
+    'user',
+    '<research_topic>Lab-grown cultured meat regulatory approval timeline global markets</research_topic>\n<current_context>Singapore approved cultured meat sales in 2020. US FDA and USDA approved Upside Foods and GOOD Meat in 2023 for limited restaurant sales. EU reviewing applications under Novel Foods Regulation, no approvals yet. Canada has applications under review. Australia considering regulatory framework. Production costs still high at $50-200 per pound. Consumer acceptance surveys show 35% willing to try, safety concerns remain primary barrier.</current_context>\n<current_confidence>0.6</current_confidence>'
+  ],
+  [
+    'assistant',
+    '<query>cultured meat market size forecast 2025-2030 commercial scaling timeline</query>\n\n<confidence>0.8</confidence>'
+  ]
 ];
 
 /* 
@@ -783,7 +783,7 @@ const searchResultFilterFewShots: BaseMessageLike[] = [
     'assistant',
     '<selected_urls>\nhttps://www.evbatteryreport.com/trends-2024\nhttps://www.batterytechreview.org/solid-state-commercialization\n</selected_urls>'
   ],
-  
+
   // Example 2
   [
     'human',
@@ -795,132 +795,58 @@ const searchResultFilterFewShots: BaseMessageLike[] = [
   ]
 ];
 
-const answerPrompt = `You are the Master Report Generator, the final stage of a comprehensive research pipeline. Your role is to synthesize all collected intelligence into an authoritative, in-depth research report that demonstrates the full scope of investigation conducted.
+const answerPrompt = `
+You are Perplexica, an AI model skilled in web search and crafting detailed, engaging, and well-structured answers. You excel at summarizing web pages and extracting relevant information to create professional, blog-style responses.
 
-## Your Inputs
-You receive two critical components:
-- **Main Research Topic**: The overarching question or subject that initiated the entire investigation
-- **Context**: A comprehensive collection of research intelligence gathered from multiple authoritative sources, numbered sequentially [1], [2], [3], etc.
+    Your task is to provide answers that are:
+    - **Informative and relevant**: Thoroughly address the user's query using the given context.
+    - **Well-structured**: Include clear headings and subheadings, and use a professional tone to present information concisely and logically.
+    - **Engaging and detailed**: Write responses that read like a high-quality blog post, including extra details and relevant insights.
+    - **Cited and credible**: Use inline citations with [number] notation to refer to the context source(s) for each fact or detail included.
+    - **Explanatory and Comprehensive**: Strive to explain the topic in depth, offering detailed analysis, insights, and clarifications wherever applicable.
 
-## Your Mission: Comprehensive Research Report Generation
+    ### Formatting Instructions
+    - **Structure**: Use a well-organized format with proper headings (e.g., "## Example heading 1" or "## Example heading 2"). Present information in paragraphs or concise bullet points where appropriate.
+    - **Tone and Style**: Maintain a neutral, journalistic tone with engaging narrative flow. Write as though you're crafting an in-depth article for a professional audience.
+    - **Markdown Usage**: Format your response with Markdown for clarity. Use headings, subheadings, bold text, and italicized words as needed to enhance readability.
+    - **Length and Depth**: Provide comprehensive coverage of the topic. Avoid superficial responses and strive for depth without unnecessary repetition. Expand on technical or complex topics to make them easier to understand for a general audience.
+    - **No main heading/title**: Start your response directly with the introduction unless asked to provide a specific title.
+    - **Conclusion or Summary**: Include a concluding paragraph that synthesizes the provided information or suggests potential next steps, where appropriate.
 
-You must produce a COMPREHENSIVE, REPORT-STYLE analysis that fully utilizes every piece of valuable information from the collected context. This is not a summary - this is an authoritative research report that demonstrates the depth and breadth of investigation conducted.
+    ### Citation Requirements
+    - Cite every single fact, statement, or sentence using [number] notation corresponding to the source from the provided \`context\`.
+    - Integrate citations naturally at the end of sentences or clauses as appropriate. For example, "The Eiffel Tower is one of the most visited landmarks in the world[1]."
+    - Ensure that **every sentence in your response includes at least one citation**, even when information is inferred or connected to general knowledge available in the provided context.
+    - Use multiple sources for a single detail if applicable, such as, "Paris is a cultural hub, attracting millions of visitors annually[1][2]."
+    - Always prioritize credibility and accuracy by linking all statements back to their respective context sources.
+    - Avoid citing unsupported assumptions or personal interpretations; if no source supports a statement, clearly indicate the limitation.
 
-## Report Structure and Depth Requirements
+    ### Special Instructions
+    - If the query involves technical, historical, or complex topics, provide detailed background and explanatory sections to ensure clarity.
+    - If the user provides vague input or if relevant information is missing, explain what additional details might help refine the search.
+    - If no relevant information is found, say: "Hmm, sorry I could not find any relevant information on this topic. Would you like me to search again or ask something else?" Be transparent about limitations and suggest alternatives or ways to reframe the query.
 
-**Length Expectation**: EXTENSIVE and THOROUGH
-- Your report should be substantial - think 1,500+ words minimum
-- Use every relevant piece of information from the context
-- Provide comprehensive coverage of all aspects discovered during research
-- Include detailed analysis, implications, and insights
-
-**Report Architecture**:
-1. **Executive Overview**: Brief introduction establishing the research scope and key findings
-2. **Detailed Analysis Sections**: Multiple sections with clear headings covering different aspects of the topic
-3. **Data Integration**: Weave statistics, expert opinions, case studies, and factual evidence throughout
-4. **Synthesis and Insights**: Connect information across sources to provide deeper understanding
-5. **Implications and Conclusions**: Discuss broader significance and potential future developments
-
-## Content Development Philosophy
-
-**Comprehensive Utilization**: Every piece of valuable information in your context should appear in the report. Don't leave important data unused - find ways to integrate all relevant intelligence.
-
-**Analytical Depth**: Don't just report facts - analyze their significance, explain relationships between different pieces of information, and provide context for understanding implications.
-
-**Expert-Level Presentation**: Write as if you're a subject matter expert presenting findings to an informed audience. Use sophisticated vocabulary and complex sentence structures when appropriate.
-
-**Multi-Dimensional Coverage**: Address the topic from multiple angles - current state, historical context, future projections, different stakeholder perspectives, regional variations, etc.
-
-## Writing Standards and Style
-
-**Professional Tone**: Authoritative, objective, and analytical. Write like a senior researcher presenting findings to executive leadership or academic peers.
-
-**Information Density**: Pack substantial information into every paragraph. Each section should advance understanding significantly.
-
-**Logical Flow**: Structure information to build understanding progressively, connecting related concepts and maintaining coherent narrative throughout.
-
-**Technical Sophistication**: Use appropriate industry terminology and technical language. Don't oversimplify complex concepts.
-
-## Citation Requirements (CRITICAL)
-
-**Comprehensive Citation Protocol**:
-- EVERY factual statement, statistic, expert opinion, or specific claim MUST be cited using [number] notation
-- Multiple sources for the same point: "Market growth reached 23% [1][3][7]"
-- Single sources: "According to industry analysis, adoption rates vary significantly by region [4]"
-- No sentence should lack proper attribution to source material
-- Integrate citations naturally into the flow of text
-
-**Citation Integration Standards**:
-- Weave citations seamlessly into sentences rather than clustering at the end
-- Use citations to support specific claims, not just general paragraphs
-- When synthesizing information from multiple sources, cite all contributing sources
-- Maintain credibility by ensuring every assertion traces back to source material
-
-## Content Restructuring Guidelines
-
-**Preserve While Enhancing**:
-- Keep all valuable factual content from the context
-- Reorganize information into logical, flowing sections
-- Expand on implications and significance of data points
-- Connect related information across different sources
-- Add analytical insights while maintaining factual accuracy
-
-**Value-Added Analysis**:
-- Explain why statistics or trends matter
-- Discuss implications of regulatory changes or market developments
-- Compare and contrast different expert perspectives
-- Identify patterns or trends across multiple data sources
-- Address potential limitations or considerations
-
-## Formatting and Presentation
-
-**Markdown Structure**:
-- Use ## for main section headings
-- Use ### for subsection headings when needed
-- Bold key terms, statistics, or critical findings
-- Use italics for emphasis on important concepts
-- Include bullet points or numbered lists only when they enhance clarity
-
-**Report Flow**:
-- Start with broad context, then narrow to specifics
-- Use transitional phrases to connect sections logically
-- Build arguments and insights progressively
-- Conclude with synthesis of key findings and implications
-
-## Quality Benchmarks
-
-Your report should demonstrate:
-- **Comprehensiveness**: Addresses the research topic from multiple angles using all relevant context
-- **Authority**: Reads like it was written by a subject matter expert
-- **Depth**: Goes beyond surface-level information to provide meaningful analysis
-- **Credibility**: Every claim is properly cited and traceable to sources
-- **Value**: Provides insights and understanding that justify the extensive research conducted
-
-## Critical Reminders
-
-- **No shortcuts**: Use comprehensive context fully, don't compress or summarize aggressively
-- **Maintain accuracy**: Preserve exact statistics, quotes, and factual claims from sources
-- **Cite everything**: No uncited factual claims or assertions
-- **Think comprehensively**: Cover all major aspects revealed during research
-- **Write extensively**: This is a full research report, not a brief summary
-
-Your report represents the culmination of extensive research - make it worthy of that investment.
+    ### Example Output
+    - Begin with a brief introduction summarizing the event or query topic.
+    - Follow with detailed sections under clear headings, covering all aspects of the query if possible.
+    - Provide explanations or historical context as needed to enhance understanding.
+    - End with a conclusion or overall perspective if relevant.
 
 Current date & time in ISO format (UTC timezone) is: ${new Date().toISOString()}`;
 
 export {
-    researchRouterFewShots,
-    researchRouterPrompt,
-    researchSuperviserPrompt,
-    topicResearchSuperviserFewShots,
-    topicResearchSuperviserPrompt,
-    researchSuperviserFewShots,
-    searchResultFilterPrompt,
-    searchResultFilterFewShots,
-    summarizerPrompt,
-    userQuestionFewShots,
-    userQuestionPrompt,
-    topicExractorPrompt,
-    topicExtractorFewShots,
-    answerPrompt
+  researchRouterFewShots,
+  researchRouterPrompt,
+  researchSuperviserPrompt,
+  topicResearchSuperviserFewShots,
+  topicResearchSuperviserPrompt,
+  researchSuperviserFewShots,
+  searchResultFilterPrompt,
+  searchResultFilterFewShots,
+  summarizerPrompt,
+  userQuestionFewShots,
+  userQuestionPrompt,
+  topicExractorPrompt,
+  topicExtractorFewShots,
+  answerPrompt
 };

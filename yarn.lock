@@ -94,13 +94,6 @@
     zod "^3.25.32"
     zod-to-json-schema "^3.22.3"
 
-"@langchain/exa@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@langchain/exa/-/exa-0.1.0.tgz#03eed8a788123580c23ebd5de09832e4cba6f101"
-  integrity sha512-9HN4vuqiKxo4SYu7SbxdrKAu2ISiDUy0PRexKX/pNbxwAzKhBhCDkALjIceSAIJ9F6rgJxkykPYJd1AzHPvXFA==
-  dependencies:
-    exa-js "^1.0.12"
-
 "@langchain/langgraph-checkpoint@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@langchain/langgraph-checkpoint/-/langgraph-checkpoint-0.1.0.tgz#d2a8bd9eb831f47cfe8b74bc196004388a6083bb"
@@ -143,15 +136,6 @@
   dependencies:
     js-tiktoken "^1.0.12"
     openai "^5.3.0"
-    zod "^3.25.32"
-
-"@langchain/openai@^0.6.9":
-  version "0.6.9"
-  resolved "https://registry.yarnpkg.com/@langchain/openai/-/openai-0.6.9.tgz#303280bdd12e85b38493c3ccabac573fb1e27c2b"
-  integrity sha512-Dl+YVBTFia7WE4/jFemQEVchPbsahy/dD97jo6A9gLnYfTkWa/jh8Q78UjHQ3lobif84j2ebjHPcDHG1L0NUWg==
-  dependencies:
-    js-tiktoken "^1.0.12"
-    openai "5.12.2"
     zod "^3.25.32"
 
 "@langchain/textsplitters@>=0.0.0 <0.2.0":
@@ -400,13 +384,6 @@ cross-fetch@^3.1.5:
   dependencies:
     node-fetch "^2.7.0"
 
-cross-fetch@~4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-4.1.0.tgz#8f69355007ee182e47fa692ecbaa37a52e43c3d2"
-  integrity sha512-uKm5PU+MHTootlWEY+mZ4vvXoCn4fLQxT9dSc1sXVMSFkINTJVN8cAQROpwcKm8bJ/c7rgZVIBWzH5T78sNZZw==
-  dependencies:
-    node-fetch "^2.7.0"
-
 decamelize@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
@@ -426,11 +403,6 @@ dotenv@^17.2.1:
   version "17.2.1"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-17.2.1.tgz#6f32e10faf014883515538dc922a0fb8765d9b32"
   integrity sha512-kQhDYKZecqnM0fCnzI5eIv5L4cAe/iRI+HqMbO/hbRdTAeXDG+M9FjipUxNfbARuEg4iHIbhnhs78BCHNbSxEQ==
-
-dotenv@~16.4.7:
-  version "16.4.7"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.4.7.tgz#0e20c5b82950140aa99be360a8a5f52335f53c26"
-  integrity sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==
 
 dunder-proto@^1.0.1:
   version "1.0.1"
@@ -483,28 +455,6 @@ eventemitter3@^4.0.4:
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-4.0.7.tgz#2de9b68f6528d5644ef5c59526a1b4a07306169f"
   integrity sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
 
-exa-js@^1.0.12:
-  version "1.8.23"
-  resolved "https://registry.yarnpkg.com/exa-js/-/exa-js-1.8.23.tgz#6eacac2394a46ea602bb83c5545054a96f6e7754"
-  integrity sha512-46l66SJM5HuaRTc9Nf9Rz4FCaq3xBjrecgDEjq6P05B7qZXpEBjSuW24ra5ppBaauzgzGiS0FdeVMFCEvulpPQ==
-  dependencies:
-    cross-fetch "~4.1.0"
-    dotenv "~16.4.7"
-    openai "^5.0.1"
-    zod "^3.22.0"
-    zod-to-json-schema "^3.20.0"
-
-exa-js@^1.9.1:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/exa-js/-/exa-js-1.9.1.tgz#eeec10215f2a13453cee6262dfc86d6b5570a896"
-  integrity sha512-BJ+voD+0c9q2vWW6l310p10E18HU1Q1A7jlTk6bHyANSfC1cV/A1NaEaNUwyM2Hshl+8KJjUC8LlLrkr8qvYdQ==
-  dependencies:
-    cross-fetch "~4.1.0"
-    dotenv "~16.4.7"
-    openai "^5.0.1"
-    zod "^3.22.0"
-    zod-to-json-schema "^3.20.0"
-
 expr-eval@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/expr-eval/-/expr-eval-2.0.2.tgz#fa6f044a7b0c93fde830954eb9c5b0f7fbc7e201"
@@ -530,6 +480,11 @@ form-data@^4.0.4:
     es-set-tostringtag "^2.1.0"
     hasown "^2.0.2"
     mime-types "^2.1.12"
+
+fsevents@2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
+  integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
 function-bind@^1.1.2:
   version "1.1.2"
@@ -736,12 +691,7 @@ ollama@^0.5.12:
   dependencies:
     whatwg-fetch "^3.6.20"
 
-openai@5.12.2:
-  version "5.12.2"
-  resolved "https://registry.yarnpkg.com/openai/-/openai-5.12.2.tgz#512ab6b80eb8414837436e208f1b951442b97761"
-  integrity sha512-xqzHHQch5Tws5PcKR2xsZGX9xtch+JQFz5zb14dGqlshmmDAFBFEWmeIpf7wVqWV+w7Emj7jRgkNJakyKE0tYQ==
-
-openai@^5.0.1, openai@^5.3.0:
+openai@^5.3.0:
   version "5.10.2"
   resolved "https://registry.yarnpkg.com/openai/-/openai-5.10.2.tgz#5391ac067bc0a96fc6d2909bed86630960d0041c"
   integrity sha512-n+vi74LzHtvlKcDPn9aApgELGiu5CwhaLG40zxLTlFQdoSJCLACORIPC2uVQ3JEYAbqapM+XyRKFy2Thej7bIw==
@@ -778,6 +728,20 @@ p-timeout@^3.2.0:
   integrity sha512-rhIwUycgwwKcP9yTOOFK/AKsAopjjCakVqLHePO3CC6Mir1Z99xT+R63jZxAT5lFZLa2inS5h+ZS2GvR99/FBg==
   dependencies:
     p-finally "^1.0.0"
+
+playwright-core@1.55.0:
+  version "1.55.0"
+  resolved "https://registry.yarnpkg.com/playwright-core/-/playwright-core-1.55.0.tgz#ec8a9f8ef118afb3e86e0f46f1393e3bea32adf4"
+  integrity sha512-GvZs4vU3U5ro2nZpeiwyb0zuFaqb9sUiAJuyrWpcGouD8y9/HLgGbNRjIph7zU9D3hnPaisMl9zG9CgFi/biIg==
+
+playwright@^1.55.0:
+  version "1.55.0"
+  resolved "https://registry.yarnpkg.com/playwright/-/playwright-1.55.0.tgz#7aca7ac3ffd9e083a8ad8b2514d6f9ba401cc78b"
+  integrity sha512-sdCWStblvV1YU909Xqx0DhOjPZE4/5lJsIS84IfN9dAZfcl/CIZ5O8l3o0j7hPMjDvqoTF8ZUcc+i/GL5erstA==
+  dependencies:
+    playwright-core "1.55.0"
+  optionalDependencies:
+    fsevents "2.3.2"
 
 protobufjs@^7.2.5:
   version "7.5.3"
@@ -973,12 +937,12 @@ yn@3.1.1:
   resolved "https://registry.yarnpkg.com/yn/-/yn-3.1.1.tgz#1e87401a09d767c1d5eab26a6e4c185182d2eb50"
   integrity sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
 
-zod-to-json-schema@^3.20.0, zod-to-json-schema@^3.22.3, zod-to-json-schema@^3.24.6:
+zod-to-json-schema@^3.22.3, zod-to-json-schema@^3.24.6:
   version "3.24.6"
   resolved "https://registry.yarnpkg.com/zod-to-json-schema/-/zod-to-json-schema-3.24.6.tgz#5920f020c4d2647edfbb954fa036082b92c9e12d"
   integrity sha512-h/z3PKvcTcTetyjl1fkj79MHNEjm+HpD6NXheWjzOekY7kV+lwDYnHw+ivHkijnCSMz1yJaWBD9vu/Fcmk+vEg==
 
-zod@^3.22.0, zod@^3.25.32:
+zod@^3.25.32:
   version "3.25.76"
   resolved "https://registry.yarnpkg.com/zod/-/zod-3.25.76.tgz#26841c3f6fd22a6a2760e7ccb719179768471e34"
   integrity sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==

@@ -1,0 +1,29 @@
+{
+  "name": "learn-langgraph",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/deep_researcher.js",
+    "postinstall": "playwright install chromium",
+    "dev": "ts-node deep_researcher.ts"
+  },
+  "dependencies": {
+    "@langchain/community": "^0.3.50",
+    "@langchain/core": "^0.3.68",
+    "@langchain/langgraph": "^0.4.0",
+    "@langchain/ollama": "^0.2.3",
+    "axios": "^1.11.0",
+    "dotenv": "^17.2.1",
+    "langchain": "^0.3.30",
+    "playwright": "^1.55.0",
+    "zod": "^4.0.17",
+    "zod-to-json-schema": "^3.24.6"
+  }
+}

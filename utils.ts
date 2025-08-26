@@ -1,5 +1,6 @@
 import { Document } from "@langchain/core/documents";
 import { BaseMessage, isAIMessage } from "@langchain/core/messages";
+import { chromium } from "playwright";
 
 export const XMLOutputParser = (key: string, input: string) => {
     const startTag = `<${key}>`;
@@ -27,7 +28,7 @@ export const formatContextAsString = (context: Document[]) => {
 export const searchWeb = async (query: string): Promise<Document[]> => {
     const res = await fetch(`http://localhost:4000/search?q=${query}&format=json`)
     const results = (await res.json()).results
-    
+
     return results.map((result: any) => new Document({
         pageContent: result.content,
         metadata: {
@@ -45,12 +46,58 @@ export const cosineSimilarity = (a: number[], b: number[]) => {
 }
 
 export const getArticleLengthScore = (averageLength: number): number => {
-  const referenceLength = 2000;
-  const referenceScore = 5;
-  
-  const decayFactor = 0.002;
-  
-  const rawScore = referenceScore + Math.log(referenceLength / Math.max(averageLength, 1)) / decayFactor;
-  
-  return Math.max(1, Math.min(10, Math.round(rawScore * 10) / 10));
+    const referenceLength = 2000;
+    const referenceScore = 5;
+
+    const decayFactor = 0.002;
+
+    const rawScore = referenceScore + Math.log(referenceLength / Math.max(averageLength, 1)) / decayFactor;
+
+    return Math.max(1, Math.min(10, Math.round(rawScore * 10) / 10));
 }
+
+export const getWebsiteContent = async (url: string): Promise<{ text: string, title: string }> => {
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
+
+  await page.goto(url, { waitUntil: "domcontentloaded" });
+
+  const visibleText = await page.evaluate(() => {
+    function getVisibleText(el: Node): string {
+      if (el.nodeType === Node.TEXT_NODE) {
+        return el.textContent?.trim() ?? "";
+      }
+      if (el.nodeType !== Node.ELEMENT_NODE) {
+        return "";
+      }
+
+      const element = el as HTMLElement;
+      const style = window.getComputedStyle(element);
+      if (
+        style.display === "none" ||
+        style.visibility === "hidden" ||
+        style.opacity === "0"
+      ) {
+        return "";
+      }
+
+      let text = "";
+      for (const child of el.childNodes) {
+        text += getVisibleText(child) + " ";
+      }
+      return text.trim();
+    }
+
+    return getVisibleText(document.body);
+  });
+
+  const title = await page.title()
+
+  await page.close();
+  await browser.close();
+
+  return {
+    text: visibleText,
+    title: title
+  };
+};

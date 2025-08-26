@@ -1,36 +1,13 @@
-import { ChatOllama } from "@langchain/ollama";
 import { Annotation, Command, START, StateGraph, StateType, UpdateType } from "@langchain/langgraph";
 import { BaseMessage } from "@langchain/core/messages";
 import { Document } from "@langchain/core/documents";
 import { ChatPromptTemplate } from '@langchain/core/prompts';
 import { answerPrompt, researchRouterFewShots, researchRouterPrompt, researchSuperviserFewShots, researchSuperviserPrompt, searchResultFilterFewShots, searchResultFilterPrompt, summarizerPrompt, topicExractorPrompt, topicExtractorFewShots, topicResearchSuperviserFewShots, topicResearchSuperviserPrompt, userQuestionFewShots, userQuestionPrompt } from "./prompts";
-import { cosineSimilarity, formatChatHistoryAsString, formatContextAsString, getArticleLengthScore, searchWeb, XMLOutputParser } from './utils';
-import axios from 'axios'
-import { config } from "dotenv";
-import { ChatOpenAI, OpenAI, OpenAIEmbeddings } from "@langchain/openai";
-import fs from 'fs';
-import Exa from "exa-js";
+import { cosineSimilarity, formatChatHistoryAsString, formatContextAsString, getArticleLengthScore, getWebsiteContent, searchWeb, XMLOutputParser } from './utils';
 import { RunnableLambda } from "@langchain/core/runnables";
-config()
+import { llm, embeddings, query } from "./config";
+import fs from 'fs';
 
-const exa = new Exa(process.env.EXA_API_KEY);
-
-const llm = new ChatOllama({
-    baseUrl: 'http://localhost:11434',
-    model: 'qwen3:8b',
-    temperature: 0,
-    numCtx: 32386,
-})
-
-const embeddings = new OpenAIEmbeddings({
-    model: 'text-embedding-3-large'
-})
-/* 
-const llm = new ChatOpenAI({
-    model: 'gpt-4.1-mini',
-    temperature: 0
-})
- */
 const InputStateAnnotation = Annotation.Root({
     chat_history: Annotation<BaseMessage[]>,
     follow_up: Annotation<string>
@@ -281,12 +258,7 @@ const summarizerNode = async (input: typeof GraphStateAnnotation.State) => {
 
     await Promise.all(input.current_sub_research_urls?.map(async (url) => {
         try {
-            const result = await exa.getContents(
-                [url],
-                {
-                    text: true
-                }
-            )
+            const result = await getWebsiteContent(url)
 
             const promptTemplate = ChatPromptTemplate.fromMessages([
                 ['system', summarizerPrompt],
@@ -303,7 +275,7 @@ const summarizerNode = async (input: typeof GraphStateAnnotation.State) => {
 
             const formattedPrompt = await promptTemplate.format({
                 research_query: input.current_sub_research_query,
-                page_content: result.results[0].text
+                page_content: result.text
             })
 
             const out = await llm.invoke(formattedPrompt)
@@ -312,7 +284,7 @@ const summarizerNode = async (input: typeof GraphStateAnnotation.State) => {
                 pageContent: out.content as string,
                 metadata: {
                     source: url,
-                    title: result.results[0].title ?? 'No title'
+                    title: result.title ?? 'No title'
                 }
             })
 
@@ -451,7 +423,7 @@ const app = graph.compile()
 const main = async () => {
     const res = await app.stream({
         chat_history: [],
-        follow_up: 'Perform deep research on the new gpt-oss LLM released by OpenAI, i am interested in performance, accuracy, architecture and use cases.'
+        follow_up: query
     }, {
         streamMode: ['values', 'messages'],
         recursionLimit: 10000
@@ -463,8 +435,6 @@ const main = async () => {
         }
         if (type === 'values'&& chunk.answer) {
             fs.writeFileSync('answer.txt', chunk.answer)
-        } else if (type === 'messages') {
-            console.log(chunk[0].content)
         }
     }
 
@@ -472,7 +442,7 @@ const main = async () => {
         curveStyle: 'basis'
     })
 
-    fs.writeFileSync('graph.png', new Uint8Array(await (await graph).arrayBuffer())) */
+    fs.writeFileSync('./assets/graph.png', new Uint8Array(await (await graph).arrayBuffer())) */
 }
 
 main()
